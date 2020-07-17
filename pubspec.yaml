@@ -17,6 +17,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  cached_network_image: "2.0.0-rc"
+  http:
   flutter:
     sdk: flutter
 
@@ -56,7 +58,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family:  Icons
+      fonts:
+      - asset: fonts/Icons.ttf
+    - family: Quicksand
+      fonts:
+      - asset: fonts/Quicksand.ttf
+      - asset: fonts/Quicksand-Medium.ttf
+        weight: 100
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
