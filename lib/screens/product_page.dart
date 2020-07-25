@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:homefit/models/product.dart';
+import 'package:homefit/screens/remote_object.dart';
 
 import '../main.dart';
 
@@ -64,10 +65,10 @@ class ProductPageState extends State<ProductPage> {
                             Icons.favorite,
                             size: 30.0,
                           ),
-                          color:
-                              MyHomePage.wishList.products.contains(widget.product)
-                                  ? Colors.redAccent
-                                  : Colors.white,
+                          color: MyHomePage.wishList.products
+                                  .contains(widget.product)
+                              ? Colors.redAccent
+                              : Colors.white,
                           onPressed: () => toggle(),
                         ),
                       )),
@@ -107,16 +108,18 @@ class ProductPageState extends State<ProductPage> {
             FlatButton(
               color: Theme.of(context).primaryColor,
               onPressed: () {
-                MyHomePage.shoppingBasket.addProductToBasket(widget.product.id, 1);
-                key.currentState.showSnackBar(new SnackBar(
-                  content: new Text(
-                      "${widget.product.name} has been added to your basket"),
-                ));
+                // MyHomePage.shoppingBasket.addProductToBasket(widget.product.id, 1);
+                // key.currentState.showSnackBar(new SnackBar(
+                //   content: new Text(
+                //       "${widget.product.name} has been added to your basket"),
+                // ));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => RemoteObject()));
               },
               padding: EdgeInsets.symmetric(vertical: 32.0),
               child: Center(
                 child: Text(
-                  "Buy Now",
+                  "Try LIVE!",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

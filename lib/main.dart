@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homefit/data.dart';
 import 'package:homefit/screens/category_page.dart';
+import 'package:homefit/screens/remote_object.dart';
 import 'package:homefit/widgets/custom_app_bar.dart';
 import 'package:homefit/models/shopping_basket.dart';
 import 'package:homefit/models/wishlist.dart';

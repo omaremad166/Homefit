@@ -19,7 +19,7 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      'https://majestic-glacier-47307.herokuapp.com/products/' + json['_id'] + '/image',
+      'https://homefitapi.herokuapp.com/products/' + json['_id'] + '/image',
       json['name'],
       json['price'],
       json['description'],
@@ -40,7 +40,7 @@ class Product {
   } 
   
   Future<List<Product>> fetchProducts() async { 
-    final response = await http.get('https://majestic-glacier-47307.herokuapp.com/products'); 
+    final response = await http.get('https://homefitapi.herokuapp.com/products'); 
     if (response.statusCode == 200) { 
         return parseProducts(response.body); 
     } else { 
@@ -49,7 +49,7 @@ class Product {
   }
 
   Future<List<Product>> getProductsByCategory(String categoryId) async { 
-    final response = await http.get('https://majestic-glacier-47307.herokuapp.com/categoryProducts/$categoryId'); 
+    final response = await http.get('https://homefitapi.herokuapp.com/categoryProducts/$categoryId'); 
     if (response.statusCode == 200) { 
         return parseProducts(response.body); 
     } else { 

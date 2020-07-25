@@ -31,7 +31,7 @@ class Category {
   } 
   
   Future<List<Category>> fetchCategories() async { 
-    final response = await http.get('https://majestic-glacier-47307.herokuapp.com/categories'); 
+    final response = await http.get('https://homefitapi.herokuapp.com/categories'); 
     if (response.statusCode == 200) { 
         return parseCategories(response.body); 
     } else { 
