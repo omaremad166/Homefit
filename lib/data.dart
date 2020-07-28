@@ -19,7 +19,7 @@ class Data {
         "Both practical and beautiful, this lamp is a great addition to any workspace",
         getCategoryFromName("Lamp"),
         '0',
-        DateTime.now()),
+        DateTime.now(), '', 0, 0, 0, ''),
     Product(
         "https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "Traditional Chair",
@@ -27,7 +27,7 @@ class Data {
         "A traditional chair, suitable for any application",
         getCategoryFromName("Chair"),
         '1',
-        DateTime.now()),
+        DateTime.now(), '', 0, 0, 0, ''),
     Product(
         "https://images.pexels.com/photos/56589/cactus-plant-plant-rack-green-56589.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "Cactus",
@@ -35,7 +35,7 @@ class Data {
         "in addition to being a decoration, cactus can also be a health benefit, let's buy cactus in our store because now discount 30%",
         getCategoryFromName("Plant"),
         '2',
-        DateTime.now()),
+        DateTime.now(), '', 0, 0, 0, ''),
     Product(
         "https://images.pexels.com/photos/279618/pexels-photo-279618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "Cupboard",
@@ -43,7 +43,7 @@ class Data {
         "Simplistic cupboard, which works in every situation",
         getCategoryFromName("Other"),
         '3',
-        DateTime.now()),
+        DateTime.now(), '', 0, 0, 0, ''),
     Product(
         "https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "Reclined Chair",
@@ -51,7 +51,7 @@ class Data {
         "White reclined chair",
         getCategoryFromName("Chair"),
         '4',
-        DateTime.now()),
+        DateTime.now(), '', 0, 0, 0, ''),
     Product(
         "https://images.pexels.com/photos/993626/pexels-photo-993626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "Alfalfa Plant",
@@ -59,7 +59,7 @@ class Data {
         "Potted Alfalfa Plant",
         getCategoryFromName("Plant"),
         '5',
-        DateTime.now()),
+        DateTime.now(), '', 0, 0, 0, ''),
     Product(
         "https://images.pexels.com/photos/135168/pexels-photo-135168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "Rosemary",
@@ -67,7 +67,7 @@ class Data {
         "Potted Rosemary Plant",
         getCategoryFromName("Plant"),
         '6',
-        DateTime.now())
+        DateTime.now(), '', 0, 0, 0, '')
   ];
 
   static Category getCategoryFromName(name) {

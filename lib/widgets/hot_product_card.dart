@@ -1,8 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:homefit/models/product.dart';
-import 'package:homefit/main.dart';
 import 'package:homefit/screens/product_page.dart';
+
+import '../home_page.dart';
 
 class ProductCard extends StatefulWidget {
   final Product product;
@@ -18,8 +19,12 @@ class ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-          builder: (BuildContext context) => ProductPage(widget.product))),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (BuildContext context) => ProductPage(widget.product),
+        ),
+      ),
+      behavior: HitTestBehavior.translucent,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.0),
         child: Stack(
@@ -33,6 +38,9 @@ class ProductCardState extends State<ProductCard> {
                 fit: BoxFit.cover,
                 height: double.infinity,
                 width: double.infinity,
+                placeholder: (context, string) => Center(
+                  child: Icon(Icons.collections),
+                ),
               ),
             ),
             Container(
@@ -57,10 +65,10 @@ class ProductCardState extends State<ProductCard> {
                         ),
                         Icon(
                           Icons.favorite,
-                          color:
-                              MyHomePage.wishList.products.contains(widget.product)
-                                  ? Colors.redAccent
-                                  : Colors.white,
+                          color: MyHomePage.wishList.products
+                                  .contains(widget.product)
+                              ? Colors.redAccent
+                              : Colors.white,
                           size: 16.0,
                         ),
                       ],

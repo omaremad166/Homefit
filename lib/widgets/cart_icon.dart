@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homefit/main.dart';
+
+import '../home_page.dart';
 
 class CartIcon extends StatefulWidget {
   @override

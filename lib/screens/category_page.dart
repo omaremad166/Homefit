@@ -24,7 +24,7 @@ class CategoryPageState extends State<CategoryPage> {
 
   Future<List<Product>> futureCategoryProducts;
   Product x = new Product('', '', 0, '',
-      new Category('', CustomIcons.chair, ''), '1', DateTime.now());
+      new Category('', CustomIcons.chair, ''), '1', DateTime.now(), '', 0, 0, 0, '');
 
   @override
   void initState() {
@@ -52,7 +52,7 @@ class CategoryPageState extends State<CategoryPage> {
       future: futureCategoryProducts,
       builder: (context, snapshot) {
         if (snapshot.connectionState != ConnectionState.done) {
-          return CircularProgressIndicator();
+          return Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
@@ -197,13 +197,15 @@ class CategoryPageState extends State<CategoryPage> {
           future: futureCategoryProducts,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return CircularProgressIndicator();
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
             }
 
             List<Product> products = snapshot.data;
-            
+
             switch (sortBy) {
               case SortBy.LowestPrice:
                 products.sort((p1, p2) => p1.cost < p2.cost ? 0 : 1);

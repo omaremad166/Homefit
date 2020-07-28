@@ -31,6 +31,14 @@ dev_dependencies:
     sdk: flutter
 
   arcore_flutter_plugin:
+  shared_preferences:
+  introduction_screen: ^1.0.9
+  flutter_launcher_icons:
+
+flutter_icons:
+  image_path: "assets/images/3271fdb3-79e2-4494-8369-4fbbbcdc2be3_200x200.png" 
+  android: true
+  ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -44,9 +52,15 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
+  assets:
+   - assets/images/3271fdb3-79e2-4494-8369-4fbbbcdc2be3_200x200.png
+   - assets/images/SOFAR_service-ad.jpg
+   - assets/images/shutterstock_1248211402.png
+   - assets/images/39292.jpg
+   - assets/images/hand.jpg
+   - assets/images/scene-viewer-framed-2.5-33.jpg
+   - assets/images/ARCore.jpg
+   - assets/images/arcore-apps-feature-4032x3024.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

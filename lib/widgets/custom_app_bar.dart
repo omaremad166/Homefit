@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homefit/screens/shopping_basket_page.dart';
-import 'package:homefit/widgets/cart_icon.dart';
+
+import '../screens/wishlist_page.dart';
 
 typedef SearchCallback = Function(String);
 
@@ -35,14 +35,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     "Homefit",
                     style: TextStyle(color: Colors.white, fontSize: 22.0),
                   ),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(48.0),
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (ctx) => ShoppingBasketPage())),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: CartIcon(),
-                    ),
+                  // InkWell(
+                  //   borderRadius: BorderRadius.circular(48.0),
+                  //   onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  //       builder: (ctx) => ShoppingBasketPage())),
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.all(8.0),
+                  //     child: CartIcon(),
+                  //   ),
+                  // ),
+                  IconButton(
+                    icon: Icon(Icons.favorite, color: Colors.white,),
+                    onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => WishListPage())),
                   ),
                 ],
               ),

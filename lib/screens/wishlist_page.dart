@@ -1,7 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:homefit/models/product.dart';
-import 'package:homefit/main.dart';
+import 'package:homefit/widgets/product_list_item.dart';
+
+import '../home_page.dart';
 
 class WishListPage extends StatelessWidget {
   @override
@@ -14,8 +15,9 @@ class WishListPage extends StatelessWidget {
       body: MyHomePage.wishList.products.length != 0
           ? ListView.builder(
               itemBuilder: (ctx, index) => Container(
-                    child: WishListListItem(MyHomePage.wishList.products[index]),
-                  ),
+                child: WishListListItem(MyHomePage.wishList.products[index],
+                    MyHomePage.wishList.products.length),
+              ),
               itemCount: MyHomePage.wishList.products.length,
             )
           : Center(
@@ -45,19 +47,14 @@ class WishListPage extends StatelessWidget {
 
 class WishListListItem extends StatelessWidget {
   final Product product;
-  WishListListItem(this.product);
+  final int length;
+  WishListListItem(this.product, this.length);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        CachedNetworkImage(
-          imageUrl: product.imageUrl,
-          width: 100.0,
-          height: 100.0,
-          fit: BoxFit.cover,
-        ),
-      ],
+    return Container(
+      color: Colors.white,
+      child: ProductListItem(product),
     );
   }
 }

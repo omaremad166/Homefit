@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:homefit/data.dart';
-import 'package:homefit/main.dart';
 import 'package:homefit/screens/wishlist_page.dart';
 import 'package:homefit/widgets/shopping_basket_list_item.dart';
+
+import '../home_page.dart';
 
 class ShoppingBasketPage extends StatefulWidget {
   @override

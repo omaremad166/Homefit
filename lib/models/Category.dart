@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../custom_icons.dart';
-
 class Category {
   final String name;
   final IconData icon;
@@ -13,11 +11,54 @@ class Category {
   Category(this.name, this.icon, this.id);
 
   factory Category.fromJson(Map<String, dynamic> json) {
-    return Category(
-      json['name'],
-      CustomIcons.chair,
-      json['_id']
-    );
+    if(json['name'] == "Others")
+    {
+      return Category(
+        json['name'],
+        Icons.dashboard,
+        json['_id']
+      );
+    }
+    else if(json['name'] == "Sofas")
+    {
+      return Category(
+        json['name'],
+        Icons.weekend,
+        json['_id']
+      );
+    }
+    else if(json['name'] == "Beds")
+    {
+      return Category(
+        json['name'],
+        Icons.local_hotel,
+        json['_id']
+      );
+    }
+    // else if(json['name'] == "Beds")
+    // {
+    //   return Category(
+    //     json['name'],
+    //     Icons.,
+    //     json['_id']
+    //   );
+    // }
+    else if(json['name'] == "Chairs")
+    {
+      return Category(
+        json['name'],
+        Icons.event_seat,
+        json['_id']
+      );
+    }
+    else
+    {
+      return Category(
+        json['name'],
+        Icons.trending_down,
+        json['_id']
+      );
+    }
   }
 
   @override
